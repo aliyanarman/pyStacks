@@ -1,4 +1,5 @@
 # pyStacks
+## by Aliyan A.
 
 A visual interface for building pandas data cleaning pipelines. Configure transforms on your dataset through a GUI, and pyStacks generates the corresponding pandas code as a Jupyter notebook.
 
@@ -6,7 +7,7 @@ A visual interface for building pandas data cleaning pipelines. Configure transf
 
 ## What it is
 
-Data cleaning in pandas is repetitive. The same `str.strip()`, `fillna()`, `pd.to_datetime()` calls appear in every project. The logic is not complex — but writing it, ordering it correctly, and making it readable takes time.
+Data cleaning in pandas is repetitive, `str.strip()`, `fillna()`, `pd.to_datetime()` calls appear in every project. The logic is not complex — but writing it, ordering it correctly, and making it readable takes time.
 
 pyStacks sits in front of that process. You load a dataset, click through columns, configure what needs to happen to each one, and get back a `.ipynb` file with the pandas code already written. The notebook has one cell per transform, one comment per cell, sequential execution counts, and automatic verification cells after operations like null drops and type casts.
 
@@ -107,7 +108,7 @@ df['date'] = df['date'].apply(_parse_date).dt.strftime('%Y-%m-%d')
 
 ## Getting started
 ```bash
-git clone https://github.com/your-username/pystacks
+git clone https://github.com/aliyanarman/pystacks
 open pystacks/pystacks.html
 ```
 
@@ -123,10 +124,6 @@ Or download `pystacks.html` from Releases and open it directly. No Python, no se
 
 ---
 
-## License
 
-MIT
-
----
 
 *pyStacks — by Aliyan A.*
