@@ -1,5 +1,5 @@
 # pyStacks
-## by Aliyan A.
+[TRY IT HERE](https://aliyanarman.github.io/pyStacks/)
 
 A visual interface for building pandas data cleaning pipelines. Configure transforms on your dataset through a GUI, and pyStacks generates the corresponding pandas code as a Jupyter notebook.
 
@@ -7,9 +7,9 @@ A visual interface for building pandas data cleaning pipelines. Configure transf
 
 ## What it is
 
-Data cleaning in pandas is repetitive, `str.strip()`, `fillna()`, `pd.to_datetime()` calls appear in every project. The logic is not complex — but writing it, ordering it correctly, and making it readable takes time.
+Data cleaning in pandas is repetitive, `str.strip()`, `fillna()`, `pd.to_datetime()` calls appear in every project. The logic is not complex - but writing it, ordering it correctly, and making it readable takes time.
 
-pyStacks sits in front of that process. You load a dataset, click through columns, configure what needs to happen to each one, and get back a `.ipynb` file with the pandas code already written. The notebook has one cell per transform, one comment per cell, sequential execution counts, and automatic verification cells after operations like null drops and type casts.
+In pyStacks. You load a dataset, click through columns, configure what needs to happen to each one, and get back a `.ipynb` file with the pandas code already written. The notebook has one cell per transform, one comment per cell, sequential execution counts, and automatic verification cells after operations like null drops and type casts.
 
 It runs entirely in the browser. One HTML file, no server, no install.
 
@@ -17,13 +17,13 @@ It runs entirely in the browser. One HTML file, no server, no install.
 
 ## How the pipeline works
 
-**Load** — drop in a CSV, TSV, XLSX, XLS, ODS, or JSON file. pyStacks reads it and infers a data type for every column. You can override the type from the sidebar.
+**Load**: drop in a CSV, TSV, XLSX, XLS, ODS, or JSON file. pyStacks reads it and infers a data type for every column. You can override the type from the sidebar.
 
-**Configure** — click a column. The transform list filters automatically to operations relevant to that column's type. Add transforms one at a time, or apply a preset that populates a full stack for common column types like Email, Name, Phone, Date, Salary, Age, and others. Each step in the stack is ordered, parameterisable, and movable.
+**Configure**: click a column. The transform list filters automatically to data cleaning operations relevant to that column's type. Add transforms one at a time, or apply a smart preset that populates a full stack for common column types like Email, Name, Phone, Date, Salary, Age, and others. Each step in the stack is ordered, parameterisable, and movable.
 
-**Preview** — the table at the bottom updates as you build the stack. Toggle between first-N rows and a random sample at any point.
+**Preview**: the table at the bottom updates as you build the stack. Toggle between first-N rows and a random sample at any point.
 
-**Export** — generate a `.ipynb` notebook or export the cleaned data directly as CSV, TSV, XLSX, JSON, XML, SQL, HTML, or Markdown.
+**Export**: generate a `.ipynb` notebook or export the cleaned data directly as CSV, TSV, XLSX, JSON, XML, SQL, HTML, or Markdown.
 
 ---
 
@@ -34,7 +34,7 @@ The `.ipynb` pyStacks generates follows a strict format:
 - One cell per transform step
 - One lowercase descriptive comment: `# filled nulls with column median — salary`
 - No `print()`, no `pd.set_option`, no boilerplate
-- `execution_count` set sequentially — cells open as already-run in Jupyter
+- `execution_count` set sequentially - cells open as already-run in Jupyter
 - Automatic **verification cells** after: `drop_nulls`, `drop_duplicates`, date parse, numeric cast, boolean normalise, conditional column, and others
 
 The load cell uses the correct reader for the file type:
@@ -92,7 +92,7 @@ Single-click stacks for: `Email` `Name` `Phone` `Date` `DateTime` `Salary` `Curr
 
 ## Excel serial dates
 
-Excel stores dates as integers — `44501` means 2021-11-01. If a column contains a mix of text dates and Excel serials, pyStacks parses the whole column correctly and generates the Python equivalent:
+Excel stores dates as integers - `44501` means 2021-11-01. If a column contains a mix of text dates and Excel serials, pyStacks parses the whole column correctly and generates the Python equivalent:
 ```python
 def _parse_date(s):
     s = str(s).strip()
